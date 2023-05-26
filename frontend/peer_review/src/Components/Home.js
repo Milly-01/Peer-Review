@@ -1,9 +1,13 @@
 import React from "react";
 // import Button from "react-bootstrap/Button";
 
+import NavBar from "./NavBar";
+
 function Home (){
     return(
-        <div className="container">
+        <div>
+            <NavBar/>
+            <div className="container">
             <button id="signin">Sign In</button>
             <button id="signup">Sign Up</button>
 
@@ -21,6 +25,8 @@ function Home (){
             
         
         </div>
+        </div>
+     
     );
 }
 
