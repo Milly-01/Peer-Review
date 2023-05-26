@@ -5,6 +5,39 @@ const SerpApi = require("google-search-results-nodejs");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+// New
+const mongoose = require("mongoose");
+
+
+
+mongoose.connect(process.env.MONGOATLASS, {useNewUrlParser: true})
+    .then(function(result){
+        console.log("Connected to database");
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+
+
+
+const signupSchema = new mongoose.Schema({
+    s_name: String,
+    s_surname: String,
+    s_emailaddress: String,
+    s_password: String,
+    s_occupation: String
+});    
+
+
+const Peer = mongoose.model("Peer", signupSchema);
+
+
+
+
+// New
+
+
+
 
 
 // Creating express app
@@ -25,20 +58,20 @@ app.use(cors({
 
 
 
-// Serpi API data fetching, q should be a filter from user, but we will fix it
-const search = new SerpApi.GoogleSearch(process.env.SCHOLARAPIKEY);
-const params = {
-  engine: "google_scholar",
-  q: "biology"
-};
+ //Serpi API data fetching, q should be a filter from user, but we will fix it
+ const search = new SerpApi.GoogleSearch(process.env.SCHOLARAPIKEY);
+ const params = {
+   engine: "google_scholar",
+   q: "Mathematics books"
+ };
 
 
 
-// Show result as JSON
-let json_data;
-search.json(params, function(data){
-    json_data = data.organic_results; 
-});
+ // Show result as JSON
+ let json_data;
+ search.json(params, function(data){
+     json_data = data.organic_results; 
+ });
 
 
 // Home get request
