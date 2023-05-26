@@ -26,19 +26,19 @@ app.use(cors({
 
 
 // Serpi API data fetching, q should be a filter from user, but we will fix it
-const search = new SerpApi.GoogleSearch(process.env.SCHOLARAPIKEY);
-const params = {
-  engine: "google_scholar",
-  q: "biology"
-};
+// const search = new SerpApi.GoogleSearch(process.env.SCHOLARAPIKEY);
+// const params = {
+//   engine: "google_scholar",
+//   q: "biology"
+// };
 
 
 
-// Show result as JSON
-let json_data;
-search.json(params, function(data){
-    json_data = data.organic_results; 
-});
+// // Show result as JSON
+// let json_data;
+// search.json(params, function(data){
+//     json_data = data.organic_results; 
+// });
 
 
 // Home get request
