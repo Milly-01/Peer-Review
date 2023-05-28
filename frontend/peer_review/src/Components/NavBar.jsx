@@ -16,7 +16,7 @@ function NavBar(){
         <div>
             <nav className="navbar navbar-expand-lg">
                  <div className="container-fluid">
-                    <a class="navbar-brand" href="#">Peer Review</a>
+                    <a className="navbar-brand" href="#">Peer Review</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
@@ -38,7 +38,7 @@ function NavBar(){
                       </ul>
 
                       <form onSubmit={handleS}>
-                        <button  type="submit" class="btn btn-primary my-btns">Sign In/Up</button>
+                        <button  type="submit" className="btn btn-primary my-btns">Sign In/Up</button>
                       </form>
                      
                     <form className="d-flex" role="search">
