@@ -1,0 +1,44 @@
+.con-query{
+    height: 768px;
+    background:  linear-gradient(#062B30, #300B06);
+    padding-top: 150px;
+}
+
+
+.my-query{
+    width: 60%;
+    margin: 40px 10px 40px 0px;
+    border: none;
+    box-shadow: 1px 1px 3px lightgray, -1px -1px 3px lightgray;
+    padding: 8px 8px;
+
+}
+
+.searh-btn{
+    border: none;
+    background: transparent;
+}
+
+
+.color-mag-glass{
+    color: blue;
+}
+
+
+
+.search-div{
+    text-align: center;
+}
+
+.peer-search-engine{
+    color: lightgray;
+    text-shadow: 2px 2px 3px black;
+}
+
+
+
+.peer-q{
+    color: gray;
+    text-shadow: 2px 2px 3px black;
+    font-size: 0.8rem;
+}
