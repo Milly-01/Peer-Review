@@ -1,0 +1,43 @@
+.c-3{
+    height: 768px;
+    background:  linear-gradient(#062B30, #300B06);
+}
+
+
+.my-signup-form2{
+    /* background-color: white; */
+    text-align: center;
+    padding-top: 50px;
+}
+
+.sign-up2{
+    color: white;
+    margin-bottom: 50px;
+}
+
+.my-labels2{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px black;
+}
+
+.my-inputs2{
+    border-radius: 5px;
+    padding: 5px 25px; 
+}
+
+.my-sub-btn2{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+.already-account2{
+    font-size: 0.8rem;
+    text-decoration: none;
+}
