@@ -12,3 +12,25 @@
     padding: 10px;
 
 }
+
+.detail-btn{
+    display: block;
+    margin: auto;
+    /* background: linear-gradient(to right, #062B30, #300B06); */
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.p-snippet{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: gray;
+}
+
+
+.query-title{
+    letter-spacing: 2px;
+    text-align: center;
+
+}

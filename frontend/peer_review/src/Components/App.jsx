@@ -8,6 +8,7 @@ import Signup from "./Signup";
 import Signin from "./Signin";
 import Query from "./Query";
 import QueryResults from "./QueryResults";
+import QueryInDetails from "./QueryInDetails";
 
 
 import { UserContext } from "./UserContext";
@@ -64,6 +65,7 @@ function App(){
                     <Routes>
                       <Route path={"/query"} element={<Query/>}/>
                       <Route path={"/queryresults"} element={<QueryResults/>}/>
+                      <Route path={"/queryindetails"} element={<QueryInDetails/>}/>
                     </Routes>
 
                 </UserContext.Provider>
