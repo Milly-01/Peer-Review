@@ -12,12 +12,42 @@ import QueryResults from "./QueryResults";
 
 import { UserContext } from "./UserContext";
 import { useState } from "react";
+import { useEffect } from "react";
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+const getStoredData = () => {
+    const data = localStorage.getItem("u_send_querydata_everywhere");
+    if(data){
+         return JSON.parse(data);
+    }else{
+        return [];
+    }
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 function App(){
 
 
-    const [u_send_querydata_everywhere, setSendQueryDataEverywhere] = useState([]);
+    const [u_send_querydata_everywhere, setSendQueryDataEverywhere] = useState(getStoredData());
+
+    //  useEffect(()=>{
+    //     const data = localStorage.getItem("u_send_querydata_everywhere");
+    //     if(data){
+    //         setSendQueryDataEverywhere(JSON.parse(data));
+    //     }
+    // },[])
+
+  
+    useEffect(()=>{
+        localStorage.setItem("u_send_querydata_everywhere", JSON.stringify(u_send_querydata_everywhere));
+    },[u_send_querydata_everywhere]);
+
+
+
 
 
     return(
