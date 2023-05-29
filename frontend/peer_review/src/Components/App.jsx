@@ -7,9 +7,19 @@ import Home from "./Home";
 import Signup from "./Signup";
 import Signin from "./Signin";
 import Query from "./Query";
+import QueryResults from "./QueryResults";
+
+
+import { UserContext } from "./UserContext";
+import { useState } from "react";
 
 
 function App(){
+
+
+    const [u_send_querydata_everywhere, setSendQueryDataEverywhere] = useState([]);
+
+
     return(
         <div>
             <BrowserRouter>
@@ -17,8 +27,17 @@ function App(){
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/signup"} element={<Signup/>}/>
                     <Route path={"/signin"} element={<Signin/>}/>
-                    <Route path={"/query"} element={<Query/>}/>
                 </Routes>
+
+
+                <UserContext.Provider value={{u_send_querydata_everywhere, setSendQueryDataEverywhere}}>
+                    <Routes>
+                      <Route path={"/query"} element={<Query/>}/>
+                      <Route path={"/queryresults"} element={<QueryResults/>}/>
+                    </Routes>
+
+                </UserContext.Provider>
+
             </BrowserRouter>    
 
         </div>

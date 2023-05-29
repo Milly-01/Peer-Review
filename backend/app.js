@@ -2,7 +2,15 @@
 require("dotenv").config();
 const express = require("express");
 const SerpApi = require("google-search-results-nodejs");
+
+
+
+/////////////////////////
 const cors = require("cors");
+const axios = require("axios");
+
+
+//////////////////////////
 const bodyParser = require("body-parser");
 
 // New
@@ -50,34 +58,37 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Store all out backend static files, i.e css, images ...
 app.use(express.static("public"));
 
-// Setting who can access backend, in this case only our frontend react can access backend since its origin is localhost 3000
-app.use(cors({
-     credentials: true,
-     origin: "http://localhost:3000"
-}));
 
 
-
-// Serpi API data fetching, q should be a filter from user, but we will fix it
-const search = new SerpApi.GoogleSearch(process.env.SCHOLARAPIKEY);
-const params = {
-  engine: "google_scholar",
-  q: "biology"
-};
-
-
-
-// Show result as JSON
-let json_data;
-search.json(params, function(data){
-    json_data = data.organic_results; 
+// Substitute for cors
+app.use(function(req, res, next){
+    res.set("Access-Control-Allow-Origin", "*");
+    res.set("Access-Control-Allow-Headers", "*");
+    res.set("Access-Control-Allow-Methods", "*");
+    res.set("x-requested-with", "XMLHttpRequest");
+    res.set("Access-Control-Expose-Headers","Content-Encoding,api_key");
+    res.set("origin","http://localhost:3000");
+    if (req.method === "OPTIONS") {
+        res.status(200).end();
+        return;
+    }
+    next();
 });
 
 
-// Home get request
-app.get("/", function(req, res){
-    res.send(json_data);
+
+//Query using input from frontend
+app.post("/api/query", function(req, res){
+    let {query} = req.body;
+    axios.get(`https://serpapi.com/search.json?engine=google_scholar&q=${query}&api_key=${process.env.SCHOLARAPIKEY}`)
+        .then(function (response) {
+            res.send(response.data);
+        })
+        .catch(function (error) {
+            res.send(error.response.data);
+        });
 });
+
 
 
 // Listening to access on the port 3001 or as generated for us by deploying plartforms

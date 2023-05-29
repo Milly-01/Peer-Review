@@ -1,0 +1,14 @@
+.my-elements{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.my-boxes{
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    border: 1px solid lightgray;
+    padding: 10px;
+
+}
