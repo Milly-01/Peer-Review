@@ -1,12 +1,4 @@
-.my-elements{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .my-boxes{
-    width: 350px;
-    height: 350px;
     margin: 20px;
     border: 1px solid lightgray;
     padding: 10px;
@@ -14,8 +6,8 @@
 }
 
 .detail-btn{
-    display: block;
-    margin: auto;
+    /* display: block;
+    margin: auto; */
     /* background: linear-gradient(to right, #062B30, #300B06); */
     color: white;
     font-weight: bold;
@@ -31,6 +23,6 @@
 
 .query-title{
     letter-spacing: 2px;
-    text-align: center;
+    /* text-align: center; */
 
 }

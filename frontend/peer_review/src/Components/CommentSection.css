@@ -1,0 +1,55 @@
+.my-comment-section{
+    padding: 10px 20px;
+    /* border: 1px solid lightgray; */
+    margin-bottom: 100px;
+}
+
+.my-comment-h{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.my-comments{
+    padding: 5px 15px;
+}
+
+.my-labels-2{
+    display: block;
+}
+
+.posted-by{
+    letter-spacing: 2px;
+
+}
+
+.the-heading{
+    margin-left: 30px;
+}
+
+.my-p{
+    margin-left: 30px;
+    letter-spacing: 2px;
+    color: darkgray;
+    margin-bottom: 3px;
+}
+
+.my-labels-3{
+    color: blue;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-left: 30px;
+
+}
+
+.my-date{
+    margin-left: 5px;
+}
+
+.my-span{
+    color: green;
+}
+
+.comment-blocks{
+    margin-bottom: 25px;
+}

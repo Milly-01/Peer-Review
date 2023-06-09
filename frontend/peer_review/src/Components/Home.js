@@ -4,7 +4,11 @@ import React from "react";
 import NavBar from "./NavBar";
 import "./Home.css";
 
+import { UserContext } from "./UserContext";
+import { useContext } from "react";
+
 function Home (){
+    const {u_send_loginemail, setSendLoginEmail} = useContext(UserContext);
     return(
         <div>
             <NavBar/>

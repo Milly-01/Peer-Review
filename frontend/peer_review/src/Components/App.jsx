@@ -9,11 +9,14 @@ import Signin from "./Signin";
 import Query from "./Query";
 import QueryResults from "./QueryResults";
 import QueryInDetails from "./QueryInDetails";
+import CommentSection from "./CommentSection";
+import NavBar from "./NavBar";
 
 
 import { UserContext } from "./UserContext";
 import { useState } from "react";
 import { useEffect } from "react";
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -34,6 +37,7 @@ function App(){
 
 
     const [u_send_querydata_everywhere, setSendQueryDataEverywhere] = useState(getStoredData());
+    const [u_send_loginemail, setSendLoginEmail] = useState("");
 
     //  useEffect(()=>{
     //     const data = localStorage.getItem("u_send_querydata_everywhere");
@@ -42,30 +46,48 @@ function App(){
     //     }
     // },[])
 
-  
+         
+
+ 
     useEffect(()=>{
         localStorage.setItem("u_send_querydata_everywhere", JSON.stringify(u_send_querydata_everywhere));
     },[u_send_querydata_everywhere]);
 
 
+     // Login Email Address made available to every page after login in using User Context
+     useEffect(()=>{
+        const data = localStorage.getItem("u_send_loginemail");
+            if(data){
+                setSendLoginEmail(data);
+            }
+         },[])
+  
+       useEffect(()=>{
+        localStorage.setItem("u_send_loginemail", u_send_loginemail);
+         },[u_send_loginemail]);
+      // Login Email Address made available to every page after login in using User Context
 
 
 
+ 
+
+
+
+ 
     return(
         <div>
             <BrowserRouter>
-                <Routes>
-                    <Route path={"/"} element={<Home/>}/>
-                    <Route path={"/signup"} element={<Signup/>}/>
-                    <Route path={"/signin"} element={<Signin/>}/>
-                </Routes>
-
-
-                <UserContext.Provider value={{u_send_querydata_everywhere, setSendQueryDataEverywhere}}>
+          
+                <UserContext.Provider value={{u_send_querydata_everywhere, setSendQueryDataEverywhere, u_send_loginemail, setSendLoginEmail}}>
                     <Routes>
-                      <Route path={"/query"} element={<Query/>}/>
-                      <Route path={"/queryresults"} element={<QueryResults/>}/>
-                      <Route path={"/queryindetails"} element={<QueryInDetails/>}/>
+                        <Route path={"/"} element={<Home/>}/>
+                        <Route path={"/signup"} element={<Signup/>}/>
+                        <Route path={"/signin"} element={<Signin/>}/>
+                        <Route path={"/query"} element={<Query/>}/>
+                        <Route path={"/queryresults"} element={<QueryResults/>}/>
+                        <Route path={"/queryindetails"} element={<QueryInDetails/>}/>
+                        <Route path={"/commentsection"} element={<CommentSection/>}/>
+                        <Route path={"/navbar"} element={<NavBar/>}/>
                     </Routes>
 
                 </UserContext.Provider>

@@ -14,4 +14,11 @@ nav{
 .my-btns{
     margin-right: 20px;
     /* margin-bottom: 10px; */
+    letter-spacing: 2px;
+    font-weight: bold;
 }
+
+.unclickable{
+    pointer-events: none;
+}
+

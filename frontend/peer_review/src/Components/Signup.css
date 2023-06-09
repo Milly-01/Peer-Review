@@ -41,3 +41,11 @@
     font-size: 0.8rem;
     text-decoration: none;
 }
+
+
+.swal2-modal{
+    background-color:#000;
+    color: white;
+    letter-spacing: 2px;
+}
+

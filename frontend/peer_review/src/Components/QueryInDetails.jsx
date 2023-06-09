@@ -9,8 +9,15 @@ import { useState } from "react";
 import NavBar from "./NavBar";
 
 import "./QueryInDetails.css";
+import CommentSection from "./CommentSection";
+
+import { UserContext } from "./UserContext";
+import { useContext } from "react";
 
 function QueryInDetails(){
+
+    const {u_send_loginemail, setSendLoginEmail} = useContext(UserContext);
+
 
     const location = useLocation();
     // const [loc_pos, setPosition] = useState(0);
@@ -39,14 +46,20 @@ function QueryInDetails(){
                 <div className="query-in-detail">
                     <h4 className="loc-title">{loc_tit}</h4>
                     <p className="loc-snippet">{loc_snip}</p>
+                 
                     <a href={loc_link} className="loc-external-link">Click here to read external full link. When you are done, feel free to leave a comment or review bellow</a>
-                    <div className="my-btns2">
+                    {/* <div className="my-btns2">
                         <button className="btn btn-primary the-btn2">Comment</button>
                         <button className="btn btn-success the-btn2">Review</button>
-                    </div>
+                    </div> */}
+
+                   
                     
                 </div>
-                <hr></hr>
+                {/* <hr></hr> */}
+
+
+                <CommentSection postid={loc_res_id} posttitle={loc_tit} postlink={loc_link}/>
             </div>
         </div>
        

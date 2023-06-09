@@ -21,7 +21,7 @@ function Query(){
     
     const [query, setQuery] = useState("");
     const [mydata, setData] = useState([]);
-    const {u_send_querydata_everywhere, setSendQueryDataEverywhere} = useContext(UserContext);
+    const {u_send_querydata_everywhere, setSendQueryDataEverywhere, u_send_loginemail, setSendLoginEmail} = useContext(UserContext);
 
     function handleQueryChange(event){
         setQuery(event.target.value);
@@ -37,7 +37,8 @@ function Query(){
             });
 
 
-        navigate("/queryresults")    
+      
+         navigate("/queryresults")    
     }
 
 
