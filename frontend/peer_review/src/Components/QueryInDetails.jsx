@@ -53,6 +53,8 @@ function QueryInDetails(){
                         <button className="btn btn-success the-btn2">Review</button>
                     </div> */}
 
+
+
                    
                     
                 </div>
